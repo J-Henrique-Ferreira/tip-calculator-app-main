@@ -47,7 +47,7 @@ article {
 
 .container {
     display: grid;
-    grid-template-columns: 200px auto 200px;
+    grid-template-columns: auto 750px auto;
     grid-template-rows: auto auto  auto;
     grid-template-areas: 
     '. . .'
@@ -80,7 +80,7 @@ article {
     border-radius: 5px;
     margin: 0 0 35px 0;
     height: 34px;
-    width: 100%;
+    width: 300px;
 }
 
 .celula1 input:hover {
@@ -105,6 +105,7 @@ article {
     display: inline-flex;
     margin: 0;
     padding: 0;
+    columns: 3;
 }
 .celula1 button {
     font-size: 1.1em;
@@ -128,7 +129,7 @@ article {
     background-color: var(--colorInput);
     font-size: 1em;
     margin: 4px;
-    width: 91px;
+    width: 90px;
     height: 34px;
     color: var(--color2);
 }
@@ -252,7 +253,7 @@ celula1#inCustom:focus{
 
 /*------------------ RESPONSIVE ----------------*/
 
-@media (max-width: 800px) {
+@media (max-width: 760px) {
 
     .container {
         display: grid;
@@ -276,103 +277,68 @@ celula1#inCustom:focus{
         'celula2';
     }
     .celula1 {
-      margin-bottom: 10px; 
-    }
-    
-    .celula1 p{
-        
+        margin-bottom: 10px; 
     }
     
     .celula1 input {
-        margin: 0 0 10px 0;
-    
-    
+        width: 100%;
     }
-    .celula1 input:hover {
-        
-    }
-    
-    .celula1 input:focus{
-       
-    }
-    
-    .buttons {
-    }
-    
-    .celula1 ul{
-       display: flex;
-       justify-content: space-evenly;
 
+    .celula1 ul{
+        display: flex;
+        justify-content: space-between;
+        margin: 0 0 25px 0;
     }
-    .celula1 button {
-    }
-    
-    .celula1 button:hover {
-       
-    }
-    
-    .celula1 #inCustom {
-      
-    }
-    
-    
-    
-    celula1#inCustom:focus{
-    
-    }
-    
-    
-    
-    
+   
     .celula2 {
         margin: 5px 25px 15px 25px;
     }
     
-    .box1 {
-       
-    
-    }
-    
-    .box1 h2 {
-       
-    }
-    
-    .box1 p {
-       
-    }
-    
-    .span1 {
-       
-    }
-    
-    
-    
-    .box2 {
-        
-    
-    }
-    
-    .box2 h2 {
-       
-    }
-    
-    .box2 p {
-       
-    }
-    
-    .span2 {
-        
-    }
-    
-    .div-buttom-reset {
-       
-    }
-    
-    .buttom-reset {
-        
-    }
-    
-    .buttom-reset:hover {
-        
-    }
 }
+
+
+@media (max-width: 500px) {
+    @media (max-width: 760px) {
+
+        .container {
+            display: grid;
+            grid-template-columns:  auto ;
+            grid-template-areas: 
+            'grid';
+        
+        }
+        
+        .grid {
+            background-color: var(--color4);
+            grid-area: grid;
+            border-radius: 10px;
+            margin: 2px;
+            height: auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            grid-area: 
+            'celula1'
+            'celula2';
+        }
+        .celula1 {
+            margin-bottom: 10px; 
+        }
+        
+        .celula1 input {
+            width: 100%;
+        }
+    
+        .celula1 ul{
+            display: flex;
+            justify-content: space-between;
+    
+        }
+       
+        .celula2 {
+            margin: 5px 25px 15px 25px;
+        }
+        
+    }
+    
+}    
