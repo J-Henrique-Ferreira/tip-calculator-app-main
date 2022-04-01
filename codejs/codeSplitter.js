@@ -119,11 +119,10 @@ function paymentValues() {
 
     let numberPeople = Number(inpPeople.value);
 
-    let tripAmount =  Number( numberPeople);
+    let tripAmount =  splitter() / numberPeople;
 
     let total = tripAmount * numberPeople;
 
-    alert(splitter())
     inSpan1.textContent = "$ " + tripAmount.toFixed(2);
     inSpan2.textContent = "$ " + total.toFixed(2);
 }
