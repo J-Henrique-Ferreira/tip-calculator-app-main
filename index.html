@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./style/style.css">
   
   <title>Frontend Mentor | Tip calculator app</title>
 
@@ -27,25 +27,26 @@
           <div class="celula1" id="0">
             <div>
               <p>BILL:</p>
-                <input type="number" class="inpNumber" id="inpNumber" placeholder="0" autofocus>
+                <input type="number" class="inpNumber" id="inBill" placeholder="0" autofocus>
             </div>
               <div class="buttons">
                 <P>Select Trip %</P>
-                <ul>
-                  <li><button>5%</button></li>
-                  <li><button>15%</button></li>
-                  <li><button>10%</button></li>
-                
-                </ul>
-                <ul>
-                  <li><button>25%</button></li>
-                  <li><button>50%</button></li>
-                  <li><input type="number" placeholder="Custom" id="inCustom" ></li>
-                </ul>
+                <div id="areaButons">
+                  <ul >
+                    <li><button id="bt5">5%</button></li>
+                    <li><button id="bt10">10%</button></li>
+                    <li><button id="bt15">15%</button></li>
+                  </ul>
+                  <ul>
+                    <li><button id="bt25">25%</button></li>
+                    <li><button id="bt50">50%</button></li>
+                    <li><input type="number" placeholder="Custom" id="inCustom" ></li>
+                  </ul>
+                </div>
               </div>
               <div>
                 <p>Number of People</p>
-                <input type="number" placeholder="0">
+                <input type="number" id="inpPeople" placeholder="0">
               </div>
            </div>
           <div class="celula2" id="1">
@@ -53,29 +54,25 @@
               <h2>Trip Amount</h2>
               <p>/ person</p>
             </div>
-            <div class="span1">$0.00</div>
-
+            <div class="span1" id="span1">$0.00</div>
             <div class="box2">
               <h2>Total</h2>
               <p>/ person</p>
             </div>
-            <div class="span2">$0.00</div>
+            <div class="span2" id="span2">$0.00</div>
             <div class="div-buttom-reset">
               <button class="buttom-reset" id="btReset">RESET</button>
-            </div>
-
-           
+            </div>      
         </div>  
     </div>
-
   </article>
-  
-  
  <footer class="attribution">
     <p>
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-      Coded by <a href="https://www.instagram.com/joaof6418/" target="blank">João Henrique Ferreira</a>.
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor.</a>
+      Coded by <a href="https://www.instagram.com/joaof6418/" target="blank">João Henrique Ferreira.</a>
     </p>
   </footer>
+
+  <script src="./codejs/codeSplitter.js"></script>
 </body>
 </html>
