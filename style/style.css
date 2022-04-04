@@ -26,6 +26,7 @@ body {
     font-family: monospace;
 }
 
+
 #h1 {
     margin-top: 12px;
     text-align: center;
@@ -69,18 +70,32 @@ article {
     margin: 25px 15px 25px 25px;
 }
 
-.celula1 p{
+.p{
     margin: 0 0 5px 0;
     color: var(--colorh1);
+    display: inline-flex;
+}
+
+.oculta {
+    display: none;
+}
+
+.exibe {
+    color: red;
+    display: inline;
 }
 
 .celula1 input {
     background-color: var(--colorInput);
     border: 1px solid white;
+    font-size: 1em;
+    font-weight: 00;
+    color: var(--color2);
     border-radius: 5px;
     margin: 0 0 35px 0;
     height: 34px;
     width: 300px;
+    text-align: end;
 }
 
 .celula1 input:hover {
@@ -127,10 +142,10 @@ article {
 
 .celula1 #inCustom {
     background-color: var(--colorInput);
-    font-size: 1em;
+    font-size: .9em;
     margin: 4px;
     width: 90px;
-    height: 34px;
+    height: 32px;
     color: var(--color2);
 }
 
@@ -234,6 +249,15 @@ celula1#inCustom:focus{
 
 .buttom-reset {
     background-color: var(--colorReset);
+    color: var(--color2);
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    padding: 9px 0;
+}
+
+.buttom-reset-exibe {
+    background-color: var(--color3);
     color: var(--color2);
     border: none;
     border-radius: 5px;
