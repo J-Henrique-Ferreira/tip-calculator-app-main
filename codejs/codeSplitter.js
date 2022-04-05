@@ -1,4 +1,4 @@
-/*------ Coded by @joaof6418 instagram -------*/
+/*--------------------- Coded by @joaof6418 instagram ---------------------*/
 
 
 
@@ -28,7 +28,7 @@ function splitter(dripPercentage) {
 }
 
 
-//------------------
+//-----------------------------------------------------------------------------
 
 //verifica se o campo conta foi preenchido corretamente
 function verify() {
@@ -55,6 +55,7 @@ function verify() {
         alertBill.className = "oculta";
     }
 
+    //verifica se a porcentagem foi selecinada
     if (dripPercentage == 0) {
         alertPercentage.className = "exibe";
         alertPercentage.focus();
@@ -64,6 +65,7 @@ function verify() {
         inpPeople.focus();
     }
 
+    //verifica se numero de pessoas foi selecionado
     if (people == "" || people == isNaN(people)) {
         alertPeople.className = "exibe";
         return;
@@ -76,7 +78,12 @@ function verify() {
 
 
 
-//------------------
+
+//-----------------------------------------------------------------------------
+
+
+
+
 
 //evento click no bt5%
 function clickbt5() {
@@ -88,6 +95,7 @@ function clickbt5() {
 let bt5 = document.getElementById("bt5");
 bt5.addEventListener("click", clickbt5)
 
+
 //evento click no bt10%
 function clickbt10() {
     dripPercentage = .10;
@@ -97,6 +105,7 @@ function clickbt10() {
 }
 let bt10 = document.getElementById("bt10");
 bt10.addEventListener("click", clickbt10);
+
 
 //evento click no bt15%
 function clickbt15() {
@@ -109,6 +118,7 @@ function clickbt15() {
 let bt15 = document.getElementById("bt15");
 bt15.addEventListener("click", clickbt15);
 
+
 //evento click no bt25%
 function clickbt25() {
     dripPercentage = .25;
@@ -120,6 +130,7 @@ function clickbt25() {
 let bt25 = document.getElementById("bt25");
 bt25.addEventListener("click", clickbt25);
 
+
 //evento click no bt50%
 function clickbt50() {
     let dripPercentage = .50;
@@ -129,6 +140,7 @@ function clickbt50() {
 }
 let bt50 = document.getElementById("bt50");
 bt50.addEventListener("click", clickbt50);
+
 
 //evento click no btcustom
 function btCustom() {
@@ -140,6 +152,8 @@ function btCustom() {
     verify();
     numPeople(dripPercentage);
 }
+
+// quando "Enter" for pressinado no input "inCustom"
 let inCustom = document.getElementById("inCustom");
 inCustom.addEventListener("keypress", function(tecla) {
     if (tecla.keyCode == 13) {
@@ -152,9 +166,15 @@ inCustom.addEventListener("keypress", function(tecla) {
 
 
 
-//------------------
 
-//obtem o numero de pessoas
+//-----------------------------------------------------------------------------
+
+
+
+
+
+//obtem o numero de pessoas e recebe o parâmetro
+//dripPercentage para enviar a function paymentValues
 function numPeople(dripPercentage) {
     let inpPeople = document.getElementById("inpPeople");
     let numP = Number(inpPeople.value);
@@ -165,8 +185,9 @@ function numPeople(dripPercentage) {
     } else {
         paymentValues(dripPercentage, numP);
     }
-} 
+}
 
+// quando "Enter" for pressinado no input "inBill"
 let inBill = document.getElementById("inBill");
 inBill.addEventListener("keypress", function(tecla) {
     if (tecla.keyCode == 13) {
@@ -175,6 +196,7 @@ inBill.addEventListener("keypress", function(tecla) {
     }
 })
 
+// quando "Enter" for pressinado no input "inpPeople"
 let inpPeople = document.getElementById("inpPeople");
 inpPeople.addEventListener("keypress", function(tecla) {
     if (tecla.keyCode == 13) {
@@ -184,7 +206,15 @@ inpPeople.addEventListener("keypress", function(tecla) {
 })
 
 
-//------------------
+
+
+
+//-----------------------------------------------------------------------------
+
+
+
+
+
 //function responsavel por calcular e exibir os valores que retornam para o usuário
 function paymentValues(dripPercentage, numP) {
     let tripAmount =  (splitter(dripPercentage) - splitter(0)) / numP; 
@@ -196,22 +226,46 @@ function paymentValues(dripPercentage, numP) {
     inSpan1.textContent = "$" + tripAmount.toFixed(2);
     inSpan2.textContent = "$" + total.toFixed(2);
 
-    verify();
+    verify(); 
+
+    //não permite que os spans devolvam os valores aos usuários
+    //até que todos os campos estejam preenchidos
     if (dripPercentage == 0 || numP == 0) {
         inSpan1.textContent = "$0.00";
         inSpan2.textContent = "$0.00";
     }
 
-    exibeButtom();
+    exibeButtom(); 
 }
 
 
+
+
+
+//-----------------------------------------------------------------------------
+
+
+
+
+
+//troca a classe do botão reset para "exibe"
 function exibeButtom() {
     let btReset = document.getElementById("btReset");
 
     btReset.className = "buttom-reset-exibe";
 }
 
+
+
+
+
+//-----------------------------------------------------------------------------
+
+
+
+
+
+//recarrega a pagina
 function reset() {
   location.reload();
 }
