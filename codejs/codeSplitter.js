@@ -222,7 +222,7 @@ inpPeople.addEventListener("keypress", function(tecla) {
 
 //function responsavel por calcular e exibir os valores que retornam para o usuário
 function paymentValues(dripPercentage, numP) {
-    //tripAmount = (valor da viagem * a porcentagem) - valor da viagem / número de pessoas
+    //tripAmount = (valor da viagem + a porcentagem) - valor da viagem / número de pessoas
     let tripAmount =  (splitter(dripPercentage) - splitter(0)) / numP; 
     let total = splitter(dripPercentage) / numP;
 
