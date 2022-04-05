@@ -1,8 +1,13 @@
+//                                __   __
+//                               |(ª) (*)|
+//                               |   #   | 
+//                               | '¨¨¨' |
+//                                ¨¨¨¨¨¨¨                           
 /*--------------------- Coded by @joaof6418 instagram ---------------------*/
 
 
 
-function instrictions() {
+function instructions() {
     if (localStorage.getItem("firstVisit")) {
        // let visit = localStorage.getItem("firstVisit").split(";");
        return;
@@ -11,7 +16,7 @@ function instrictions() {
         alert("               ATTENTION! \n\nPress 'Enter' to add input values.")
     }
 }
-instrictions();
+instructions();
 
 
 
