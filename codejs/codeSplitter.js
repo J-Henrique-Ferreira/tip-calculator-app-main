@@ -8,7 +8,7 @@ function instrictions() {
        return;
     } else {
         localStorage.setItem("firstVisit", 1);
-        alert("Press 'Enter' to add input values.")
+        alert("               ATTENTION! \n\nPress 'Enter' to add input values.")
     }
 }
 instrictions();
