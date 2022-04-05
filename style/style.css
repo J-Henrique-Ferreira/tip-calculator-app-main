@@ -87,6 +87,9 @@ article {
 
 .celula1 input {
     background-color: var(--colorInput);
+    background-image: url(images/icon-dollar.svg);
+    background-image:var(--colorh1);
+
     border: 1px solid white;
     font-size: 1em;
     font-weight: 00;
@@ -109,6 +112,9 @@ article {
     box-shadow: 0 0 0 0;
     outline: 0;
     border-color:var(--color3);
+}
+img {
+    display: block;
 }
 
 .buttons {
@@ -142,11 +148,12 @@ article {
 
 .celula1 #inCustom {
     background-color: var(--colorInput);
+    color: var(--color2);
     font-size: .9em;
     margin: 4px;
+    text-align: center;
     width: 90px;
     height: 32px;
-    color: var(--color2);
 }
 
 

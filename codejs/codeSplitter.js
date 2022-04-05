@@ -1,3 +1,20 @@
+/*------ Coded by @joaof6418 instagram -------*/
+
+
+
+function instrictions() {
+    if (localStorage.getItem("firstVisit")) {
+       // let visit = localStorage.getItem("firstVisit").split(";");
+       return;
+    } else {
+        localStorage.setItem("firstVisit", 1);
+        alert("Press 'Enter' to add input values.")
+    }
+}
+instrictions();
+
+
+
 let dripPercentage = 0;
 
 //obtem o valor da conta mais a porcentagem da gorjeta sobre a conta
@@ -22,13 +39,14 @@ function verify() {
     let bill = Number(inBill.value);
     let people = Number(inpPeople.value);
 
+    //faz referência aos ids dos campos de alerta
     let alertBill = document.getElementById("alertBill");
     let alertPercentage = document.getElementById("alertPercentage");
     let alertPeople = document.getElementById("alertPeople");
 
     let btReset = document.getElementById("btReset");
 
-    //se valor for invalido retorna um alert e direciona o foco do cursor
+    //se valor for invalido retorna um alert e modifica sua classe para exibe
     if (bill == "" || bill == isNaN(bill)) {
         alertBill.className = "exibe";
         inBill.focus();
@@ -60,53 +78,59 @@ function verify() {
 
 //------------------
 
-//evento click no bt5
+//evento click no bt5%
 function clickbt5() {
     dripPercentage = Number(.05);
 
+    verify();
     numPeople(dripPercentage);
 }
 let bt5 = document.getElementById("bt5");
 bt5.addEventListener("click", clickbt5)
 
+//evento click no bt10%
 function clickbt10() {
     dripPercentage = .10;
 
     verify();
-    numPeople(dripPercentage);
+    numPeople(dripPercentage);//retorna valor da porcentagem para function numPople
 }
 let bt10 = document.getElementById("bt10");
 bt10.addEventListener("click", clickbt10);
 
+//evento click no bt15%
 function clickbt15() {
     dripPercentage = .15;
 
     verify();
-    numPeople(dripPercentage);
+    numPeople(dripPercentage);//retorna valor da porcentagem para function numPople
 
 }
 let bt15 = document.getElementById("bt15");
 bt15.addEventListener("click", clickbt15);
 
+//evento click no bt25%
 function clickbt25() {
     dripPercentage = .25;
 
     verify();
-    numPeople(dripPercentage);
+    numPeople(dripPercentage);//retorna valor da porcentagem para function numPople
 
 }
 let bt25 = document.getElementById("bt25");
 bt25.addEventListener("click", clickbt25);
 
+//evento click no bt50%
 function clickbt50() {
     let dripPercentage = .50;
 
     verify();
-    numPeople(dripPercentage);
+    numPeople(dripPercentage); //retorna valor da porcentagem para function numPople
 }
 let bt50 = document.getElementById("bt50");
 bt50.addEventListener("click", clickbt50);
 
+//evento click no btcustom
 function btCustom() {
     let inCustom = document.getElementById("inCustom")
 
@@ -161,15 +185,16 @@ inpPeople.addEventListener("keypress", function(tecla) {
 
 
 //------------------
+//function responsavel por calcular e exibir os valores que retornam para o usuário
 function paymentValues(dripPercentage, numP) {
-    let tripAmount =  splitter(dripPercentage) / numP; // x = valor numero de pessoas
-    let total = tripAmount * numP;
+    let tripAmount =  (splitter(dripPercentage) - splitter(0)) / numP; 
+    let total = splitter(dripPercentage) / numP;
 
     let inSpan1 = document.getElementById("span1")
     let inSpan2 = document.getElementById("span2")
 
-    inSpan1.textContent = "$ " + tripAmount.toFixed(2);
-    inSpan2.textContent = "$ " + total.toFixed(2);
+    inSpan1.textContent = "$" + tripAmount.toFixed(2);
+    inSpan2.textContent = "$" + total.toFixed(2);
 
     verify();
     if (dripPercentage == 0 || numP == 0) {
